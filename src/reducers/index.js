@@ -1,10 +1,17 @@
 export const initialState = {
-	data: [],
-	loading: false,
-	error: ''
+	//1. Adds the following state values into the initialState:
+	data: [], //  - an array of smurfs
+	loading: false, //  - a boolean indicating if the app is loading
+	error: '' //  - a string indicating a possible error message
 };
 
-const reducer = (state = initialState, action) => {};
+const reducer = (state = initialState, action) => {
+	//2. Add in the arguments needed to complete a standard reducer function.
+	switch (action.type) {
+		default:
+			return state;
+	}
+};
 
 //**************DO NOT EDIT ANY CODE BEYOND THIS POINT**************//
 export default reducer;
