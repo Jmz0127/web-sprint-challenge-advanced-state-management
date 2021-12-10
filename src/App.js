@@ -10,7 +10,8 @@ import './App.css';
 import { connect } from 'react-redux';
 import { fetchSmurfs } from './actions';
 
-const App = () => {
+const App = (props) => {
+	console.log(props);
 	return (
 		<div className='App'>
 			<Header />

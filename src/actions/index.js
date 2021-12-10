@@ -1,6 +1,8 @@
 import axios from 'axios';
 
 export const LOADING = 'LOADING';
+export const SUCCESS = 'SUCCESS';
+export const ERROR = 'ERROR';
 
 export const fetchSmurfs = () => (dispatch) => {
 	dispatch({ type: LOADING });
@@ -8,9 +10,10 @@ export const fetchSmurfs = () => (dispatch) => {
 		.get('http://localhost:3333/smurfs')
 		.then((res) => {
 			console.log(res);
+			dispatch({ type: SUCCESS, payload: res.data });
 		})
 		.catch((err) => {
-			console.error(err);
+			dispatch({ type: ERROR, payload: err.message });
 		});
 };
 //Task List:

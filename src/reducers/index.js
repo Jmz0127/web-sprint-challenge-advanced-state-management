@@ -1,3 +1,5 @@
+import { LOADING, SUCCESS, ERROR } from '../actions/index';
+
 export const initialState = {
 	//1. Adds the following state values into the initialState:
 	data: [], //  - an array of smurfs
@@ -8,6 +10,23 @@ export const initialState = {
 const reducer = (state = initialState, action) => {
 	//2. Add in the arguments needed to complete a standard reducer function.
 	switch (action.type) {
+		case LOADING:
+			return {
+				...state,
+				loading: true
+			};
+		case SUCCESS:
+			return {
+				...state,
+				loading: false,
+				data: action.payload
+			};
+		case ERROR:
+			return {
+				...state,
+				loading: false,
+				error: action.payload
+			};
 		default:
 			return state;
 	}
