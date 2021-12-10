@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 import { connect } from 'react-redux';
+import { fetchSmurfs } from './actions';
 
 const App = () => {
 	return (
@@ -22,7 +23,11 @@ const App = () => {
 	);
 };
 
-export default connect()(App);
+const mapState = (state) => {
+	return state;
+};
+
+export default connect(mapState, { fetchSmurfs })(App); ///1. Connect the fetchSmurfs actions to the App component.
 
 //Task List:
 //1. Connect the fetchSmurfs actions to the App component.
