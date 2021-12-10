@@ -1,9 +1,10 @@
-
 export const initialState = {
-}
+	data: [],
+	loading: false,
+	error: ''
+};
 
-const reducer = ()=>{
-}
+const reducer = (state = initialState, action) => {};
 
 //**************DO NOT EDIT ANY CODE BEYOND THIS POINT**************//
 export default reducer;
