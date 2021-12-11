@@ -3,6 +3,8 @@ import axios from 'axios';
 export const LOADING = 'LOADING';
 export const SUCCESS = 'SUCCESS';
 export const ERROR = 'ERROR';
+export const ADDING_SMURF = 'ADDING_SMURF';
+export const ADDING_ERROR = 'ADDING_ERROR';
 
 export const fetchSmurfs = () => (dispatch) => {
 	dispatch({ type: LOADING });

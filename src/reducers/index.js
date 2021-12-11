@@ -1,4 +1,4 @@
-import { LOADING, SUCCESS, ERROR } from '../actions/index';
+import { LOADING, SUCCESS, ERROR, ADDING_SMURF, ADDING_ERROR } from '../actions/index';
 
 export const initialState = {
 	//1. Adds the following state values into the initialState:
@@ -26,6 +26,18 @@ const reducer = (state = initialState, action) => {
 				...state,
 				loading: false,
 				error: action.payload
+			};
+		case ADDING_SMURF:
+			return {
+				...state,
+				loading: false,
+				data: action
+			};
+		case ADDING_ERROR:
+			return {
+				...state,
+				loading: false,
+				error: action.message
 			};
 		default:
 			return state;
